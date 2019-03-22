@@ -1,3 +1,5 @@
+![cipher](public/cipher-logo.png)
+<br/>
 # Project Cipher
 
 I wanted to have something which helps me to store my notes or chapters from web to mobile anywhere online or offline.
