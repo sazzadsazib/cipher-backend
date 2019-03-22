@@ -1,5 +1,4 @@
 <img src="public/cipher-logo.png" alt="drawing" width="100"/>
-<br/>
 
 # Project Cipher
 
