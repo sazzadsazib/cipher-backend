@@ -3,9 +3,11 @@ let app = express();
 let blogRoute = require("./routes/notes");
 let customerRoute = require("./routes/userTable");
 let path = require("path");
+let cors = require('cors');
 let bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use((req, res, next) => {
     console.log(`${new Date().toString()} => ${req.originalUrl}`, req.body);
