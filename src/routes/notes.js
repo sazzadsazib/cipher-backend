@@ -30,7 +30,7 @@ router.post("/notes", (req, res) => {
             } else {
                 let noteModelData = {
                     username: req.body.username,
-                    notesData: JSON.stringify(req.body.notesData),
+                    notesData: req.body.notesData,
                     notesTitle: req.body.notesTitle,
                     createdAt: new Date(),
                 };
