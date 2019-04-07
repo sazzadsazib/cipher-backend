@@ -88,4 +88,30 @@ router.get("/getUserNotes", (req, res) => {
         .catch((e) => res.status(500).json(err));
 });
 
+router.delete("/notes", (req, res) => {
+    UserModel.findOne({
+        username: req.body.username,
+        password: req.body.storedPassword,
+    })
+        .then((doc) => {
+            if (!doc || doc.length === 0) {
+                res.send({ success: false });
+            } else {
+                const data = { _id: req.body.noteId };
+                NoteModel.findOneAndRemove(data)
+                    .then((doc) => {
+                        let success = true;
+                        if (!doc || doc.length === 0) {
+                            success = false;
+                        }
+                        res.status(200).send({ success: success });
+                    })
+                    .catch((err) => {
+                        res.status(500).json(err);
+                    });
+            }
+        })
+        .catch((e) => res.status(500).json(e));
+});
+
 module.exports = router;

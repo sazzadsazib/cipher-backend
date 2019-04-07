@@ -45,6 +45,10 @@ Implmented using MongoDB and node js. There is also a front-end version of this 
 
 `curl --request GET \ --url 'http://localhost:5001/getUserNotes?username=username&storedPassword=userPass' \ --header ' content-type: application/json' \ --header 'content-type: application/json'`
 
+##### Delete notes
+
+`curl --request DELETE \ --url http://localhost:5001/notes \ --header ' content-type: application/json' \ --data '{"username":"username", "storedPassword": "hash", "noteId": "_id" }'`
+
 Have a Feature Idea? feel free to add a [Issue](https://github.com/sazzadsazib/cipher-be/issues)
 
 Please check Licence before using this product (c) Sazzad Sazib 2019
